@@ -1,0 +1,19 @@
+.wrapper__side-bar
+  .wrapper__side-bar__user-name
+    .wrapper__side-bar__user-name__top-items
+      .wrapper__side-bar__user-name__top-items__name
+        山田康隆
+      .wrapper__side-bar__user-name__top-items__icons
+        .wrapper__side-bar__user-name__top-items__icons__far
+          = link_to "/", class: "wrapper__side-bar__user-name__top-items__icons__edit" do
+            = icon('fa', 'edit')
+          = link_to "/", class: "wrapper__side-bar__user-name__top-items__icons__edit" do
+            = icon('fa', 'cog')
+          
+  .wrapper__side-bar__group
+    .wrapper__side-bar__group__group-list
+      .wrapper__side-bar__group__group-list__group-name
+        hogehoge
+      .wrapper__side-bar__group__group-list__group-message
+        hogehoge
+
