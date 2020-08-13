@@ -2,12 +2,12 @@
   .wrapper__side-bar__user-name
     .wrapper__side-bar__user-name__top-items
       .wrapper__side-bar__user-name__top-items__name
-        山田康隆
+        = current_user.name
       .wrapper__side-bar__user-name__top-items__icons
         .wrapper__side-bar__user-name__top-items__icons__far
           = link_to "/", class: "wrapper__side-bar__user-name__top-items__icons__edit" do
             = icon('fa', 'edit')
-          = link_to "/", class: "wrapper__side-bar__user-name__top-items__icons__edit" do
+          = link_to edit_user_path(current_user), class: "wrapper__side-bar__user-name__top-items__icons__edit" do
             = icon('fa', 'cog')
           
   .wrapper__side-bar__group
