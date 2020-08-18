@@ -116,7 +116,6 @@ a {
   &__side-bar {
     background-color: #253141;
     width: 300px;
-
       &__user-name {
         background-color: #253241;
         height: 100px;
@@ -150,14 +149,11 @@ a {
         background-color: #2F3E51;
         height: calc(100vh - 100px);
         padding: 20px 20px 40px 20px;
-
           &__group-list {
-
             &__group-name{
               color: #ffffff;
               font-size: 15px;
             }
-
             &__group-message {
               color: #ffffff;
               margin-top: 5px;
