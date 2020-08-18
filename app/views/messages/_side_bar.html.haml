@@ -5,15 +5,17 @@
         = current_user.name
       .wrapper__side-bar__user-name__top-items__icons
         .wrapper__side-bar__user-name__top-items__icons__far
-          = link_to "/", class: "wrapper__side-bar__user-name__top-items__icons__edit" do
+          = link_to new_group_path, class: "wrapper__side-bar__user-name__top-items__icons__edit" do
             = icon('fa', 'edit')
           = link_to edit_user_path(current_user), class: "wrapper__side-bar__user-name__top-items__icons__edit" do
             = icon('fa', 'cog')
           
   .wrapper__side-bar__group
-    .wrapper__side-bar__group__group-list
-      .wrapper__side-bar__group__group-list__group-name
-        hogehoge
-      .wrapper__side-bar__group__group-list__group-message
-        hogehoge
+    - current_user.groups.each do |group|
+      .wrapper__side-bar__group__group-list
+        = link_to '#' do
+          .wrapper__side-bar__group__group-list__group-name
+            = group.name
+          .wrapper__side-bar__group__group-list__group-message
+            メッセージはまだありません
 
