@@ -2,30 +2,25 @@
   .wrapper__main-chat__group-header
     .wrapper__main-chat__group-header__group-info
       .wrapper__main-chat__group-header__group-info__group-name
-        test
+        = @group.name
       .wrapper__main-chat__group-header__group-info__group-member
-        member: hoge
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .wrapper__main-chat__group-header__group-edit
-      = link_to "/" do
+      = link_to edit_group_path(@group) do
         Edit
 
   .wrapper__main-chat__message-list
-    .wrapper__main-chat__message-list__post
-      .wrapper__main-chat__message-list__post__post-info
-        .wrapper__main-chat__message-list__post__post-info__name
-          yamada 
-        .wrapper__main-chat__message-list__post__post-info__time
-          12244566
-      .wrapper__main-chat__message-list__post__message
-        おはようございます
+    = render @messages
 
-  %form.wrapper__main-chat__message-form
+  = form_with model: [@group, @message], html: {class: "wrapper__main-chat__message-form"}, local: true do |f|
     .wrapper__main-chat__message-form__post-box
       .wrapper__main-chat__message-form__post-box__text
-        %input.wrapper__main-chat__message-form__post-box__text__text-form{"placeholder": "type a message", "type": "text"}
-        %label{class: "wrapper__main-chat__message-form__post-box__text__img"}
+        = f.text_field :content, class: 'wrapper__main-chat__message-form__post-box__text__text-form', placeholder: 'type a message'
+        = f.label :image, class: 'wrapper__main-chat__message-form__post-box__text__img' do
           = icon('fas', 'image')
-          %input{type: "file", class: "wrapper__main-chat__message-form__post-box__text__img__file"}
-      %input.wrapper__main-chat__message-form__post-box__send{"name": "commit", "type": "submit", "value": "Send"}
+          = f.file_field :image, class: 'wrapper__main-chat__message-form__post-box__text__img__file'
+      = f.submit 'Send', class: 'wrapper__main-chat__message-form__post-box__send'
 
   
