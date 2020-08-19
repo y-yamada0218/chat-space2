@@ -144,7 +144,6 @@ a {
           }
       }
       &__group {
-        color: #ffffff;
         font-weight: bold;
         background-color: #2F3E51;
         height: calc(100vh - 100px);
@@ -158,6 +157,7 @@ a {
               color: #ffffff;
               margin-top: 5px;
               font-size: 11px;
+              margin-bottom: 40px;
           }
         }
       }
