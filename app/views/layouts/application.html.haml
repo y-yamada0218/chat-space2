@@ -10,3 +10,7 @@
   %body
     = render 'layouts/notifications'
     = yield
+
+%button{:onclick => "TogetherJS(this); return false;"} TogetherJSを起動！
+
+%script{:src => "https://togetherjs.com/togetherjs-min.js"}
